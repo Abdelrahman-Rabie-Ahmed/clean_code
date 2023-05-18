@@ -1,0 +1,94 @@
+int x;  
+        		
+    
+
+(   )
+true = hbj ;  
+int _ _dvjln;
+int      x     ;
+
+            
+	
+   	 	 	  	 				
+
+
+
+//heuigwhueri
+//ihberuiwgvhn\
+ubyesy\
+ubefy
+double y;
+int   x;
+cout<<"/*/**/*/";
+cout<<"hbfv\"vbsfv";
+/*etwgyhr/*/
+int main(){
+}
+/*tehbnir//*/
+/*hbeguitkdg
+jkbefhbgvu
+khdfsv*/
+long long a;
+cout<<"welcome doctor"	 	 	 	 	 	  ;
+helo	dog;
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std 	 	  	 	 	  	;
+int main() {
+	string a;
+	string file_name;
+	cout << "Enter file name " <<                           endl;
+	getline(cin, file_name);
+	ofstream MyFile("abdo.txt");
+	//ifstream MyReadFile("dirty.txt");
+	ifstream MyReadFile(file_name);
+	int c = 0, v = 1;
+	bool flag = 0;
+	bool lord = true;
+	bool trable = false;
+	while (getline(MyReadFile, a)) {
+		flag = 0;
+		if (a == "" || a == " ") {
+			continue;
+		}
+		for (int i = 0; i < a.size(); i++) {
+			if (a[i] == '/' && a[i + 1] == '/' && v && lord) {
+				if (a[a.size() - 1] == '\\') {
+					trable = true;
+				}
+				break;
+			}
+			else if (trable == true) {
+				if (a[a.size() - 1] != '\\')
+					trable = false;
+				break;
+			}
+			else if (((a[i] == ' '&& (a[i+1]==' '||a[i+1]==9)) || (a[i] == 9&&(a[i+1]==9||a[i+1]==' '))) && lord) {
+				continue;
+			}
+			else if (a[i] == '"' && a[i - 1] != '\\') {
+				lord = !(lord);
+				MyFile << a[i];
+			}
+			else if (a[i] == '/' && a[i + 1] == '*' && v && lord) {
+				i++;
+				v = 0;
+			}
+			else if (a[i] == '*' && a[i + 1] == '/' && v == 0) {
+				v = 1;
+				i++;
+				continue;
+			}
+			else if (v) {
+				MyFile << a[i];
+				flag = 1;
+			}
+		}
+		if (flag && v == 1) {
+			MyFile << endl;
+		}
+	}
+	MyReadFile.close();
+	MyFile.close();
+}
